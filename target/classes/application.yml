@@ -1,0 +1,57 @@
+server:
+  port: 8080
+#  设置项目访问名，可以不加
+  context-path: /springboot
+##设置不同的环境变量可以切换配置块
+#spring:
+#  profiles:
+#    active: dev
+##分割不同的配置块
+#---
+#server:
+#  port: 8081
+#spring:
+#  profiles: dev
+##分割不同的配置块
+#---
+#server:
+#  port: 8082
+#spring:
+#  profiles: prod
+
+#mysql数据库配置
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.62.130:3306/mk_test_database
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    maxCreateTaskCount: 10
+    initialize: true
+#jpa配置
+  jpa:
+    hibernate:
+#启动时不存在则创建表
+      ddl-auto: update
+    show-sql: true
+#rabbitmq
+  rabbitmq:
+    host: 192.168.62.130
+    port: 5672
+    username: root
+    password: 123456
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+
+#mybatis
+mybatis:
+  config-location: classpath:resources/mybatis/mybatis-config.xml
+  mapper-locations: classpath:resources/mybatis/*Mapper.xml
+#自定义启动器的组件配置
+com:
+  mk:
+    prefix: hello
+    suffix: 你好
+

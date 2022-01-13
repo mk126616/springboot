@@ -1,0 +1,7 @@
+#定义springboot上下文的初始化器和应启动过程中的监听器
+org.springframework.context.ApplicationContextInitializer=\
+com.mk.springbootListener.MyApplicationContextInitializer
+
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.mk.springbootListener.MyApplicationRunListener
