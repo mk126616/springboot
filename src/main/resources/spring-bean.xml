@@ -17,5 +17,6 @@
     <bean id="user" class="com.mk.entity.User">
         <property name="name" value="张三"></property>
         <property name="age" value="18"></property>
+
     </bean>
 </beans>
